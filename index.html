@@ -54,29 +54,23 @@
     <div class="overflow-x-hidden w-full relative">
 
         <!-- top box or advetisemnet -->
-        <div class="bg-white w-full h-[5rem] flex flex-col lg:flex-row justify-center items-center space-x-3">
-            <p class="font-mullish font-extrabold text-deepBlueHead leading-10">
+        <div class="bg-white w-full h-[3.3rem] lg:h-[5rem] flex flex-col lg:flex-row justify-center items-center space-x-3">
+            <p class=" text-sm lg:text-xl font-mullish font-extrabold text-deepBlueHead ">
                 Razorpay FTX24, India's premier FinTech event is here!
             </p>
             <button
-                class="bg-[#305EFF] font-mullish text-white pt-[5px] pb-[5px] pl-[14px] pr-[14px] hover:text-deepBlueHead">Book
+                class="bg-[#305EFF] font-mullish text-white pt-[3px] lg:pt-[5px] pt-[3px] lg:pb-[5px] pl-[14px] pr-[14px] hover:text-deepBlueHead">Book
                 Now</button>
         </div>
         <nav class="bg-deepBlue">
             <div class="relative w-[1000px] mx-auto flex items-center sm:justify-between md:justify-around lg:justify-around ">
                 <!-- logo -->
-                <a href="/" class="cursor-pointer py-7 pr-7">
+                <a href="/" id = "RL" class="cursor-pointer py-7 pr-7 ">
                     <img src="/assets/logo.svg" alt="" width="125px" height="30px">
                 </a>
 
-                 <!-- Hamburger Menu Icon for Mobile -->
-                 <button id="mobile-menu-btn" class="lg:hidden">
-                    <!-- <img src="./assets/menu.png" alt="" class = "bg-white" width="30px" height = "30px"> -->
-                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-                </button>
-                <ul id="navbar-links" class="lg:flex lg:space-x-6">
+                
+                <ul id="menu" class="hidden lg:flex lg:space-x-6">
                     <li
                         class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group">
                         <a href="#">Payments</a>
@@ -123,22 +117,29 @@
                         </div>
                     </li>
                 </ul>
-                <div class="flex space-x-6">
+                <div class="flex flex-end lg:flex space-x-6">
                     <img src="/assets/india-flag.svg" alt="" width="28px" height="20px" class="hidden lg:block">
                     
                     <button
-                        class="py-2 px-1 font-mullish text-white border-lightBlue border rounded-sm text-small font-bold">Log
+                        id = "LI" class="py-2 px-1 font-mullish text-white border-lightBlue border rounded-sm text-small font-bold ">Log
                         In</button>
                     
                     
 
                     <button class="py-3 px-2 font-mullish rounded-sm text-sm font-bold
                     bg-white text-lightBlue300 border transition-all duration-200
-                    hover:text-lightBlue500">Sign Up
+                    hover:text-lightBlue500 hidden lg:flex">Sign Up
                         <svg viewBox="0 0 24 24" focusable="false" class="w-[14px] h-[14px] ml-2 mt-1">
                             <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z">
                             </path>
                         </svg></button>
+                         <!-- Hamburger Icon -->
+                        <button id="hamburger" class="lg:hidden focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-current text-white">
+                                <path fill-rule="evenodd"
+                                    d="M21 6.333c0-.414-.336-.75-.75-.75H3.75c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75zM3.75 12c0-.414.336-.75.75-.75h16.5c.414 0 .75.336.75.75s-.336.75-.75.75H4.5c-.414 0-.75-.336-.75-.75zm16.5 5.917c0-.414-.336-.75-.75-.75H3.75c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z" />
+                            </svg>
+                        </button>
 
                 </div>
             </div>
@@ -165,7 +166,7 @@
                         Up Now</button>
                 </div>
                 <!-- right part -->
-                <img src="./assets/hero-illustration.jpg" alt="" class="w-[600px] max-w-[680px]">
+                <img src="./assets/hero-illustration.jpg" alt="" class="w-[450px] lg:w-[600px] max-w-[680px]">
 
             </div>
 
@@ -1621,6 +1622,24 @@
     </div>
     <script>
         feather.replace()
+    </script>
+     <script>
+        // JavaScript to toggle the visibility of the menu
+        document.getElementById("hamburger").addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var login = document.getElementById("LI");
+            var logo = document.getElementById("RL");
+            if (menu.style.display === "none" || menu.style.display === "") {
+            menu.style.display = "block";
+            logo.style.display = "none";
+            login.style.display = "none";
+
+            } else {
+                menu.style.display = "none";
+                logo.style.display = "block";
+                login.style.display = "block";
+            }
+        });
     </script>
     <link rel="stylesheet" href="./index.js">
 
